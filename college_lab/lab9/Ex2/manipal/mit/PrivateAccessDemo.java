@@ -4,11 +4,11 @@ public class PrivateAccessDemo {
     public static void main(String[] args) {
         Student student = new Student();
         
-        student.setName("John Doe");
+        student.setName("Aman");
         student.setRollNumber(1234);
         s
         student.displayDetails();
-        student.name = "Jane Doe";       
+        student.name = "Aman";       
         student.rollNumber = 5678;      
     }
 }
