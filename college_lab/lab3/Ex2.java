@@ -13,8 +13,8 @@ class Employee {
         System.out.println("Enter Employee Id: ");
         eid = sc.nextInt();
         System.out.println("Enter Basic Salary: ");
-        basic = sc.nextInt();
-        sc.close();
+        basic = sc.nextDouble();
+        sc.nextLine(); // Consume the newline character
     }
 
     void compute() {
@@ -39,14 +39,18 @@ public class Ex2 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of employee: ");
         int n = sc.nextInt();
+        sc.nextLine(); // Consume the newline character
 
         Employee[] employees = new Employee[n];
         System.out.println("Enter details of Employee: ");
-        for (Employee employee : employees) {
-            employee = new Employee();
-            employee.read();
-            employee.compute();
+
+        // Use traditional for loop with index to properly initialize the array
+        for (int i = 0; i < employees.length; i++) {
+            employees[i] = new Employee();
+            employees[i].read();
+            employees[i].compute();
         }
+
         System.out.println("Employee details: ");
         for (Employee employee : employees) {
             employee.display();

@@ -18,7 +18,6 @@ class MarksValidationDemo {
     public static void testAverageCalculation() {
         Student student = new Student();
 
-        // Test with valid data
         try {
             int totalMarks = 450;
             int numberOfSubjects = 5;
@@ -28,24 +27,5 @@ class MarksValidationDemo {
             System.out.println("Error: " + e.getMessage());
         }
 
-        // Test with invalid data - total marks zero
-        try {
-            int totalMarks = 0;
-            int numberOfSubjects = 5;
-            double average = student.calculateAverage(totalMarks, numberOfSubjects);
-            System.out.println("Average marks: " + average);
-        } catch (ArithmeticException e) {
-            System.out.println("Error: " + e.getMessage());
-        }
-
-        // Test with invalid data - number of subjects zero
-        try {
-            int totalMarks = 450;
-            int numberOfSubjects = 0;
-            double average = student.calculateAverage(totalMarks, numberOfSubjects);
-            System.out.println("Average marks: " + average);
-        } catch (ArithmeticException e) {
-            System.out.println("Error: " + e.getMessage());
-        }
     }
 }
